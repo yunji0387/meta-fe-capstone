@@ -7,13 +7,13 @@ import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-// import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
 import Sidebar from './Sidebar';
+import LittleLemonLogo from '../assets/logos/logo4.png';
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -124,25 +124,20 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-            onClick={handleSidebarToggle} // Toggle the Sidebar drawer
-          >
-            <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} />
-          </IconButton> */}
           <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} />
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
             Little Lemon
-          </Typography>
+          </Typography> */}
+          <img
+            src={LittleLemonLogo}
+            alt="Little Lemon Logo"
+            // style={{ height: '40px', marginRight: '10px' }}
+            sx={{ display: { xs: 'none', sm: 'block' } , height: '25%' }} />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">

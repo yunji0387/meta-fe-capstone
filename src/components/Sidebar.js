@@ -34,7 +34,7 @@ export default function Sidebar({ open, toggleSidebar }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'Menu', 'Reservation', 'Delivery'].map((text, index) => (
+        {['Home', 'Menu', 'Reservation', 'Order'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
