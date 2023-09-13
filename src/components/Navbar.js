@@ -25,7 +25,6 @@ export default function Navbar() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -125,19 +124,15 @@ export default function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} />
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            Little Lemon
-          </Typography> */}
-          <img
-            src={LittleLemonLogo}
+          <Box
+            component="img"
+            sx={{
+              height: 40,
+              display: { xs: 'none', sm: 'block' }
+            }}
             alt="Little Lemon Logo"
-            // style={{ height: '40px', marginRight: '10px' }}
-            sx={{ display: { xs: 'none', sm: 'block' } , height: '25%' }} />
+            src={LittleLemonLogo}
+          />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">

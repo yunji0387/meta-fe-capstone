@@ -1,11 +1,10 @@
-import Header from './components/Header';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
+import Home from './scenes/Home';
 
 function App() {
   return (
     <div className="App">
-        {/* <Header /> */}
-        <Navbar />
+        <Home />
     </div>
   );
 }
