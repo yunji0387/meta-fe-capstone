@@ -14,9 +14,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
-import post1 from '../posts/blog-post-1.md';
-import post2 from '../posts/blog-post-2.md';
-import post3 from '../posts/blog-post-3.md';
+import homePost from '../posts/home-today-special.md';
+const posts = [homePost];
 
 const mainFeaturedPost = {
     title: 'Little Lemon',
@@ -47,9 +46,6 @@ const featuredPosts = [
     },
 ];
 
-
-const posts = [post1, post2, post3];
-
 const sidesection = {
   title: 'About',
   description:
@@ -60,6 +56,26 @@ const sidesection = {
     { name: 'Facebook', icon: FacebookIcon },
   ],
 };
+
+const address = {
+    addressLine: '8888 Turin Hwy',
+    city: 'Chicago',
+    postalCode: 'C5C 3T9',
+    state: 'Illinois',
+    country: 'United States'
+};
+
+const businessHours = {
+    Mon: '10:00am - 10:00pm',
+    Tue: '10:00am - 10:00pm',
+    Wed: 'Closed',
+    Thu: '10:00am - 10:00pm',
+    Fri: '10:00am - 10:00pm',
+    Sat: '10:00am - 10:00pm',
+    Sun: '10:00am - 10:00pm'
+};
+
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -84,11 +100,13 @@ export default function Home() {
                         ))}
                     </Grid>
                     <Grid container spacing={5} sx={{ mt: 3 }}>
-                        <Main title="From the firehose" posts={posts} />
+                        <Main posts={posts} />
                         <SideSection
                             title={sidesection.title}
                             description={sidesection.description}
                             archives={sidesection.archives}
+                            address={address}
+                            businessHours={businessHours}
                             social={sidesection.social}
                         />
                     </Grid>

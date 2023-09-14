@@ -24,21 +24,25 @@ function Copyright() {
   );
 }
 
+function Policy() {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" marginTop={2}>
+      <Link color="inherit" href="">
+        Privacy Policy
+      </Link>
+      {' and '}
+      <Link color="inherit" href="">
+        Terms of Service
+      </Link>
+      {' apply.'}
+    </Typography>
+  );
+}
+
 function Footer() {
   return (
     <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
       <Container maxWidth="lg">
-        {/* <Box
-          component="img"
-          sx={{
-            display: 'inline-flex',
-            justifyContent: 'center',
-            height: 80,
-            display: { xs: 'none', sm: 'block' }
-          }}
-          alt="Little Lemon Footer Logo"
-          src={FooterLogo}
-        /> */}
         <Box
           sx={{
             display: 'flex',
@@ -83,6 +87,7 @@ function Footer() {
           </Box>
         </Box>
         <Copyright />
+        <Policy />
       </Container>
     </Box>
   );

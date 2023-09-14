@@ -5,19 +5,33 @@ import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import Divider from '@mui/material/Divider';
 
 function SideSection(props) {
-  const { description, social, title } = props;
+  const { address, businessHours, social } = props;
 
   return (
     <Grid item xs={12} md={4}>
       <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.200' }}>
-        <Typography variant="h6" gutterBottom>
-          {title}
+        <Typography variant="h6" gutterBottom sx={{fontWeight: 'bold'}}>
+          Location
         </Typography>
-        <Typography>{description}</Typography>
+        <Typography>{address.addressLine},</Typography>
+        <Typography>{address.city},{address.postalCode},</Typography>
+        <Typography>{address.state}, {address.country}.</Typography>
+        <Divider sx={{marginTop:2,marginBottom:2}} />
+        <Typography variant="h6" gutterBottom sx={{fontWeight: 'bold'}}>
+          Business Hours
+        </Typography>
+        {Object.entries(businessHours).map(([day, hours]) => (
+          <div key={day} style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Typography>{`${day}`}</Typography>
+            <Typography>{hours}</Typography>
+          </div>
+        ))}
       </Paper>
-      <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
+
+      <Typography variant="h6" gutterBottom sx={{ mt: 3, fontWeight: 'bold' }}>
         Social
       </Typography>
       {social.map((network) => (
@@ -39,13 +53,6 @@ function SideSection(props) {
 }
 
 SideSection.propTypes = {
-  archives: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  description: PropTypes.string.isRequired,
   social: PropTypes.arrayOf(
     PropTypes.shape({
       icon: PropTypes.elementType,
