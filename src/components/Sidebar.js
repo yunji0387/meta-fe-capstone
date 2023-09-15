@@ -32,6 +32,21 @@ const sections = [
   }
 ];
 
+const sections2 = [
+  {
+    title: "Location",
+    href: "/location"
+  },
+  {
+    title: "Contact",
+    href: "/contact"
+  },
+  {
+    title: "About Us",
+    href: "/about"
+  }
+];
+
 export default function Sidebar({ open, toggleSidebar }) {
   const [state, setState] = React.useState({
     left: false,
@@ -52,18 +67,6 @@ export default function Sidebar({ open, toggleSidebar }) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      {/* <List>
-        {['Home', 'Menu', 'Reservation', 'Order'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List> */}
       <List>
         {sections.map((section, index) => (
           <ListItem key={section.title} disablePadding>
@@ -78,13 +81,13 @@ export default function Sidebar({ open, toggleSidebar }) {
       </List>
       <Divider />
       <List>
-        {['Location', 'Contact', 'About Us'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
+        {sections2.map((section, index) => (
+          <ListItem key={section.title} disablePadding>
+            <ListItemButton component={Link} to={section.href}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={section.title} />
             </ListItemButton>
           </ListItem>
         ))}
