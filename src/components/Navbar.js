@@ -123,6 +123,7 @@ export default function Navbar() {
       <AppBar position="fixed">
         <Toolbar>
           <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} />
+          <Box sx={{ flexGrow: 1 }} />
           <Box
             component="img"
             sx={{
