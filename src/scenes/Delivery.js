@@ -78,29 +78,10 @@ const businessHours = {
     Sun: '10:00am - 10:00pm'
 };
 
-export default function Home() {
+export default function Delivery() {
     return (
         <Container sx={{ mt: 3 }}>
             <MainFeaturedPost post={mainFeaturedPost} />
-            <Grid container spacing={4}>
-                {featuredCategories.map((category) => (
-                    <FeaturedCategory category={category} />
-                ))}
-                {featuredPosts.map((post) => (
-                    <FeaturedPost key={post.title} post={post} />
-                ))}
-            </Grid>
-            <Grid container spacing={5} sx={{ mt: 3 }}>
-                <Main posts={posts} />
-                <SideSection
-                    title={sidesection.title}
-                    description={sidesection.description}
-                    archives={sidesection.archives}
-                    address={address}
-                    businessHours={businessHours}
-                    social={sidesection.social}
-                />
-            </Grid>
         </Container>
     );
 }

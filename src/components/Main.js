@@ -31,7 +31,7 @@ function Main(props) {
       md={8}
       sx={{
         '& .markdown': {
-          py: 3,
+          py: 0,
         },
       }}
     >

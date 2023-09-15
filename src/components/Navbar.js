@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
@@ -121,14 +120,14 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} />
           <Box
             component="img"
             sx={{
               height: 40,
-              display: { xs: 'none', sm: 'block' }
+              // display: { xs: 'none', sm: 'block' }
             }}
             alt="Little Lemon Logo"
             src={LittleLemonLogo}
