@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -12,6 +11,26 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import Link from '@mui/material/Link';
+
+const sections = [
+  {
+    title: "Home",
+    href: "/"
+  },
+  {
+    title: "Menu",
+    href: "/menu"
+  },
+  {
+    title: "Reservation",
+    href: "/reservation"
+  },
+  {
+    title: "Delivery",
+    href: "/delivery"
+  }
+];
 
 export default function Sidebar({ open, toggleSidebar }) {
   const [state, setState] = React.useState({
@@ -33,7 +52,7 @@ export default function Sidebar({ open, toggleSidebar }) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      {/* <List>
         {['Home', 'Menu', 'Reservation', 'Order'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -41,6 +60,18 @@ export default function Sidebar({ open, toggleSidebar }) {
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List> */}
+      <List>
+        {sections.map((section, index) => (
+          <ListItem key={section.title} disablePadding>
+            <ListItemButton component={Link} to={section.href}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={section.title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -65,15 +96,15 @@ export default function Sidebar({ open, toggleSidebar }) {
     <div>
       <React.Fragment key={'left'}>
         <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-            onClick={toggleSidebar} // Toggle the Sidebar drawer
-          >
-            <MenuIcon />
-          </IconButton>
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          sx={{ mr: 2 }}
+          onClick={toggleSidebar} // Toggle the Sidebar drawer
+        >
+          <MenuIcon />
+        </IconButton>
         <Drawer
           anchor={'left'}
           open={open}
