@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './scenes/Home';
 import Delivery from './scenes/Delivery';
+import Menu from './scenes/Menu';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -23,6 +24,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/delivery" element={<Delivery />} />
+                <Route path="/menu" element={<Menu />} />
               </Routes>
             </Box>
           </main>

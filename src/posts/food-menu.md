@@ -1,20 +1,19 @@
-## Today's Special
+## Lunch & Dinner
 
-<hr style="border:1px solid black">
-
-_December 1, 2023 by [Chef. Alberto](/)_
-
-Curabitur blandit tempus porttitor. **Nullam quis risus eget urna mollis** ornare vel eu leo.
-Nullam id dolor id nibh ultricies vehicula ut id elit.
-
-### _Lunch Menu_
+### _Main Course_
 
 ---
 
-### **French Onion Soup** &nbsp; $12.99
+### **Grilled Fingerlings** &nbsp; $6.99
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
-### **Italian Spinach Salad** &nbsp; $12.99
+### **Smothered Chicken** &nbsp; $12.99
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+### **BBQ Platter** &nbsp; $18.99
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+### **Lumbo Shrimp** &nbsp; $18.99
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 ### _Dinner Menu_
