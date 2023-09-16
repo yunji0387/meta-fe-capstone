@@ -10,16 +10,16 @@ const posts = [homePost];
 const mainFeaturedPost = {
     title: 'Coming Soon...',
     description:
-        "Delivery features is cominng soon, please stay tuned.",
+        "Reservation features is cominng soon, please stay tuned.",
     image: mainPostImg,
     imageText: 'Little Lemon main image',
 };
 
-export default function Delivery() {
+export default function About() {
     return (
         <Container sx={{ mt: 3 }}>
             <Typography variant='h3' textAlign='center'>
-                Delivery
+                About
             </Typography>
             <MainFeaturedPost post={mainFeaturedPost} />
         </Container>
