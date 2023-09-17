@@ -4,9 +4,6 @@ import MainFeaturedPost from '../components/MainFeaturedPost';
 import Typography from '@mui/material/Typography';
 import mainPostImg from '../assets/images/littleLemon.jpg';
 
-import homePost from '../posts/home-today-special.md';
-const posts = [homePost];
-
 const mainFeaturedPost = {
     title: 'Coming Soon...',
     description:

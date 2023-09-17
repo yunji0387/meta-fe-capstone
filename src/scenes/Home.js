@@ -15,8 +15,8 @@ import mainPostImg from '../assets/images/littleLemon.jpg';
 import christmasPostImg from '../assets/images/christmas.jpg';
 import newYearPostImg from '../assets/images/newYear.jpg';
 
-import homePost from '../posts/home-today-special.md';
-const posts = [homePost];
+import todaySpecialMenu from '../menus/today-special.md';
+const posts = [todaySpecialMenu];
 
 const mainFeaturedPost = {
     title: 'Little Lemon',

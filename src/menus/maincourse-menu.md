@@ -1,5 +1,3 @@
-## Lunch & Dinner
-
 ### _Main Course_
 
 ---
