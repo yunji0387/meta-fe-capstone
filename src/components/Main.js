@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import Grid from '@mui/material/Grid';
 import Markdown from './Markdown';
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 
 function Main(props) {
-  const { posts, mediumSize } = props;
+  const { posts, mediumSize, padding, bgColor, addTopDivider } = props;
   const [markdownContent, setMarkdownContent] = useState([]);
 
   useEffect(() => {
@@ -34,13 +35,17 @@ function Main(props) {
         '& .markdown': {
           py: 0,
         },
+        p: padding,
+        bgcolor: bgColor,
       }}
     >
       {markdownContent.map((content, index) => (
         <Box key={index}>
+          {addTopDivider? <Divider /> : null}
           <Markdown className="markdown">
             {content}
           </Markdown>
+          <Divider />
         </Box>
       ))}
     </Grid>

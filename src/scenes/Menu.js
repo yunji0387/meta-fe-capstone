@@ -20,10 +20,10 @@ export default function Menu() {
             </Typography>
             <Main posts={menus} />
             <Divider />
-            <Grid container spacing={5} sx={{ mt: 0 }}>
-                <Main posts={[mainCourseMenu]} mediumSize={8} />
-                <Grid item xs={12} md={4}>
-                    <Main posts={[appertizerMenu, dessertMenu, drinkMenu]} mediumSize={12} />
+            <Grid container spacing={2} sx={{ mt: 0 }}>
+                <Main posts={[mainCourseMenu]} mediumSize={7} />
+                <Grid item xs={12} md={5}>
+                    <Main posts={[appertizerMenu, dessertMenu, drinkMenu]} mediumSize={12} padding={2} bgColor={'grey.200'} addTopDivider={true} />
                 </Grid>
             </Grid>
         </Container>
