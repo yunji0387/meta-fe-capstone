@@ -91,7 +91,7 @@ export default function Home() {
                 ))}
             </Grid>
             <Grid container spacing={5} sx={{ mt: 3 }}>
-                <Main posts={posts} />
+                <Main posts={posts} mediumSize={8} />
                 <SideSection
                     title={sidesection.title}
                     description={sidesection.description}

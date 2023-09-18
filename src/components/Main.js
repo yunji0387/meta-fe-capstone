@@ -5,7 +5,7 @@ import Markdown from './Markdown';
 import Box from '@mui/material/Box';
 
 function Main(props) {
-  const { posts } = props;
+  const { posts, mediumSize } = props;
   const [markdownContent, setMarkdownContent] = useState([]);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function Main(props) {
     <Grid
       item
       xs={12}
-      md={8}
+      md={mediumSize}
       sx={{
         '& .markdown': {
           py: 0,

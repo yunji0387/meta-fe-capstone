@@ -20,9 +20,9 @@ export default function Menu() {
             <Main posts={menus} />
 
             <Grid container spacing={5} sx={{ mt: 3 }}>
-                <Main posts={[mainCourseMenu]} />
+                <Main posts={[mainCourseMenu]} mediumSize={8} />
                 <Grid item xs={12} md={4}>
-                    <Main posts={[appertizerMenu, dessertMenu, drinkMenu]} />
+                    <Main posts={[appertizerMenu, dessertMenu, drinkMenu]} mediumSize={12} />
                 </Grid>
             </Grid>
         </Container>
