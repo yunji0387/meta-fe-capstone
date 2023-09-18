@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@mui/material/Grid';
 import Markdown from './Markdown';
+import Box from '@mui/material/Box';
 
 function Main(props) {
   const { posts } = props;
@@ -36,9 +37,11 @@ function Main(props) {
       }}
     >
       {markdownContent.map((content, index) => (
-        <Markdown className="markdown" key={index}>
-          {content}
-        </Markdown>
+        <Box key={index}>
+          <Markdown className="markdown">
+            {content}
+          </Markdown>
+        </Box>
       ))}
     </Grid>
   );
