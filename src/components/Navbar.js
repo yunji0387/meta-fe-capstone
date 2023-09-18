@@ -9,6 +9,7 @@ import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import SettingsIcon from '@mui/icons-material/Settings';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
 import Sidebar from './Sidebar';
@@ -84,14 +85,6 @@ export default function Navbar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -115,6 +108,12 @@ export default function Navbar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+      <MenuItem>
+        <IconButton size="large" color="inherit">
+          <SettingsIcon />
+        </IconButton>
+        <p>Settings</p>
+      </MenuItem>
     </Menu>
   );
 
@@ -134,7 +133,7 @@ export default function Navbar() {
             src={LittleLemonLogo}
           />
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          {/* <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
                 <MailIcon />
@@ -160,8 +159,8 @@ export default function Navbar() {
             >
               <AccountCircle />
             </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          </Box> */}
+          <Box sx={{ display: { xs: 'flex', md: 'flex' } }}>
             <IconButton
               size="large"
               aria-label="show more"

@@ -34,14 +34,6 @@ const sections = [
 
 const sections2 = [
   {
-    title: "Location",
-    href: "/location"
-  },
-  {
-    title: "Contact",
-    href: "/contact"
-  },
-  {
     title: "About Us",
     href: "/about"
   }
