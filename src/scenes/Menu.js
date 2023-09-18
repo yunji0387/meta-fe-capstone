@@ -3,6 +3,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Main from '../components/Main';
 import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 import todaySpecialMenu from '../menus/today-special.md';
 import mainCourseMenu from '../menus/maincourse-menu.md';
 import appertizerMenu from '../menus/appertizer-menu.md';
@@ -18,8 +19,8 @@ export default function Menu() {
                 Menu
             </Typography>
             <Main posts={menus} />
-
-            <Grid container spacing={5} sx={{ mt: 3 }}>
+            <Divider />
+            <Grid container spacing={5} sx={{ mt: 0 }}>
                 <Main posts={[mainCourseMenu]} mediumSize={8} />
                 <Grid item xs={12} md={4}>
                     <Main posts={[appertizerMenu, dessertMenu, drinkMenu]} mediumSize={12} />
