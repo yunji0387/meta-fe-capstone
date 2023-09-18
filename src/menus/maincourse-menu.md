@@ -1,4 +1,4 @@
-### _Main Course_
+## _Main Course_
 
 ---
 
@@ -13,10 +13,6 @@ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
 
 ### **Lumbo Shrimp** &nbsp; $18.99
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-### _Dinner Menu_
-
----
 
 ### **Grilled Acorn Squash** &nbsp; $12.99
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
