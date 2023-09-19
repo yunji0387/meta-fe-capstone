@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -7,9 +7,39 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
-export default function ReservationForm() {
+export default function ReservationForm({ onSubmit }) {
+    // Define state variables for each input field
+    const [date, setDate] = useState('');
+    const [time, setTime] = useState('');
+    const [guests, setGuests] = useState(1); // Default to 1 guest
+    const [occasion, setOccasion] = useState('');
+
+    // Event handlers to update state when input values change
+    const handleDateChange = (event) => {
+        setDate(event.target.value);
+    };
+
+    const handleTimeChange = (event) => {
+        setTime(event.target.value);
+    };
+
+    const handleGuestsChange = (event) => {
+        setGuests(event.target.value);
+    };
+
+    const handleOccasionChange = (event) => {
+        setOccasion(event.target.value);
+    };
+
+    // Handle form submission
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Call the onSubmit prop to submit the form data to the parent component
+        onSubmit({ date, time, guests, occasion });
+    };
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <TextField
@@ -20,6 +50,8 @@ export default function ReservationForm() {
                         InputLabelProps={{
                             shrink: true,
                         }}
+                        value={date}
+                        onChange={handleDateChange}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -28,6 +60,8 @@ export default function ReservationForm() {
                         <Select
                             label="Choose time"
                             id="res-time"
+                            value={time}
+                            onChange={handleTimeChange}
                         >
                             <MenuItem value="17:00">17:00</MenuItem>
                             <MenuItem value="18:00">18:00</MenuItem>
@@ -49,6 +83,8 @@ export default function ReservationForm() {
                             max: 10,
                         }}
                         id="guests"
+                        value={guests}
+                        onChange={handleGuestsChange}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -57,6 +93,8 @@ export default function ReservationForm() {
                         <Select
                             label="Occasion"
                             id="occasion"
+                            value={occasion}
+                            onChange={handleOccasionChange}
                         >
                             <MenuItem value="Birthday">Birthday</MenuItem>
                             <MenuItem value="Anniversary">Anniversary</MenuItem>
