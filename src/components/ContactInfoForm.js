@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-export default function ContactInfoForm() {
+export default function ContactInfoForm({ onSubmit, onBackClick, initialData }) {
     // Define state variables for contact information
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [firstName, setFirstName] = useState(initialData.firstName || '');
+    const [lastName, setLastName] = useState(initialData.lastName || '');
+    const [email, setEmail] = useState(initialData.email || '');
+    const [phoneNumber, setPhoneNumber] = useState(initialData.phoneNumber || '');
 
     // Event handlers to update state when input values change
     const handleFirstNameChange = (event) => {
@@ -37,9 +37,27 @@ export default function ContactInfoForm() {
         console.log('Phone Number:', phoneNumber);
     };
 
+    // Use useEffect to update the input fields when initialData changes
+    useEffect(() => {
+        setFirstName(initialData.firstName || '');
+        setLastName(initialData.lastName || '');
+        setEmail(initialData.email || '');
+        setPhoneNumber(initialData.phoneNumber || '');
+    }, [initialData]);
+
     return (
         <form onSubmit={handleSubmit}>
             <Grid container spacing={2}>
+                <Grid item xs={12}>
+                    <Button
+                        fullWidth
+                        variant="outlined" // You can style the button as needed
+                        color="primary"
+                        onClick={onBackClick}
+                    >
+                        Back to Reservation
+                    </Button>
+                </Grid>
                 <Grid item xs={12} sm={6}>
                     <TextField
                         fullWidth

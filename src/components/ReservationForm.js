@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -7,12 +7,12 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
-export default function ReservationForm({ onSubmit }) {
-    // Define state variables for each input field
-    const [date, setDate] = useState('');
-    const [time, setTime] = useState('');
-    const [guests, setGuests] = useState(1); // Default to 1 guest
-    const [occasion, setOccasion] = useState('');
+export default function ReservationForm({ onSubmit, initialData }) {
+    // Define state variables for each input field and set their initial values from props
+    const [date, setDate] = useState(initialData.date || '');
+    const [time, setTime] = useState(initialData.time || '');
+    const [guests, setGuests] = useState(initialData.guests || 1); // Default to 1 guest
+    const [occasion, setOccasion] = useState(initialData.occasion || '');
 
     // Event handlers to update state when input values change
     const handleDateChange = (event) => {
@@ -37,6 +37,14 @@ export default function ReservationForm({ onSubmit }) {
         // Call the onSubmit prop to submit the form data to the parent component
         onSubmit({ date, time, guests, occasion });
     };
+
+    // Use useEffect to update the input fields when initialData changes
+    useEffect(() => {
+        setDate(initialData.date || '');
+        setTime(initialData.time || '');
+        setGuests(initialData.guests || 1);
+        setOccasion(initialData.occasion || '');
+    }, [initialData]);
 
     return (
         <form onSubmit={handleSubmit}>
