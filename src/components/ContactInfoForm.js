@@ -105,7 +105,7 @@ export default function ContactInfoForm({ onSubmit, onBackClick, initialData }) 
                         color="primary"
                         type="submit"
                     >
-                        Submit Contact Information
+                        Make Your Reserrvation
                     </Button>
                 </Grid>
             </Grid>
