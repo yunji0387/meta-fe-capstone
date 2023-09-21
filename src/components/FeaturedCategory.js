@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
@@ -12,10 +11,10 @@ function FeaturedCategory(props) {
     return (
         <Grid item xs={12} md={4}>
             <Card sx={{height:50, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor:'black'}}>
-                <CardActionArea component="a" href="#" >
+                <CardActionArea component="a" href={category.href} >
                     <CardContent>
                         <Typography component="h2" variant="h4" sx={{ textAlign: 'center', color:'white' }}>
-                            {category}
+                            {category.title}
                         </Typography>
                     </CardContent>
                 </CardActionArea>

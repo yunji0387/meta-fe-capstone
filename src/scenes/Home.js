@@ -28,7 +28,22 @@ const mainFeaturedPost = {
     linkText: 'Continue reading…',
 };
 
-const featuredCategories = ['Reservation', 'Delivery', 'Pick Up'];
+const featuredCategories = [
+    {
+        title: 'Reservation',
+        href: "/reservation"
+    }, 
+    {
+        title: 'Delivery',
+        href: "/delivery"
+    }, 
+    {
+        title: 'Pick Up',
+        href: "/pickup"
+    }
+];
+
+// const featuredCategories = ['Reservation', 'Delivery', 'Pick Up'];
 
 const featuredPosts = [
     {

@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './scenes/Home';
 import Delivery from './scenes/Delivery';
+import PickUp from './scenes/PickUp';
 import Menu from './scenes/Menu';
 import Reservation from './scenes/Reservation';
 import About from './scenes/About';
@@ -26,6 +27,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/delivery" element={<Delivery />} />
+                <Route path="/pickup" element={<PickUp />} />
                 <Route path="/menu" element={<Menu />} />
                 <Route path="/reservation" element={<Reservation />} />
               </Routes>

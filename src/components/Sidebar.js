@@ -29,6 +29,10 @@ const sections = [
   {
     title: "Delivery",
     href: "/delivery"
+  },
+  {
+    title: "Pick Up",
+    href: "/pickup"
   }
 ];
 

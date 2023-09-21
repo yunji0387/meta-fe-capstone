@@ -3,13 +3,13 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import CurrUnavailable from '../components/CurrUnavailable';
 
-export default function Delivery() {
+export default function PickUp() {
     return (
         <Container sx={{ mt: 3 }}>
             <Typography variant='h3' textAlign='center' sx={{ mb: 1}}>
-                Delivery
+                Order Pick Up
             </Typography>
-            <CurrUnavailable title={"Delivery"} />
+            <CurrUnavailable title={"Order pick up"} />
         </Container>
     );
 }
