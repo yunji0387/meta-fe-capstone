@@ -11,6 +11,9 @@ import PickUp from './scenes/PickUp';
 import Menu from './scenes/Menu';
 import Reservation from './scenes/Reservation';
 import About from './scenes/About';
+import Notifications from './scenes/Notifications';
+import Profile from './scenes/Profile';
+import Settings from './scenes/Settings';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -30,6 +33,10 @@ function App() {
                 <Route path="/pickup" element={<PickUp />} />
                 <Route path="/menu" element={<Menu />} />
                 <Route path="/reservation" element={<Reservation />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/notifications" element={<Notifications />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/settings" element={<Settings />} />
               </Routes>
             </Box>
           </main>

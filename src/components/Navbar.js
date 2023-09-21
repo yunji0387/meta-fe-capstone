@@ -2,12 +2,13 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
+import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import MoreIcon from '@mui/icons-material/MoreVert';
@@ -16,7 +17,6 @@ import Sidebar from './Sidebar';
 import LittleLemonLogo from '../assets/logos/logo4.png';
 
 export default function Navbar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
@@ -25,12 +25,8 @@ export default function Navbar() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -40,32 +36,6 @@ export default function Navbar() {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -84,35 +54,41 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+      <MenuItem sx={{p:0}}>
+        <Button href='./notifications'>
+          <IconButton
+            size="large"
+            aria-label="show 17 new notifications"
+            color="inherit"
+          >
+            <Badge badgeContent={17} color="error">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <Typography variant='p' sx={{width:125}}>Notifications</Typography>
+        </Button>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+      <MenuItem sx={{p:0}}>
+        <Button href='./profile'>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+          >
+            <AccountCircle />
+          </IconButton>
+          <Typography variant='p' sx={{width:125}}>Profile</Typography>
+        </Button>
       </MenuItem>
-      <MenuItem>
-        <IconButton size="large" color="inherit">
-          <SettingsIcon />
-        </IconButton>
-        <p>Settings</p>
+      <MenuItem sx={{p:0}}>
+        <Button href='./settings'>
+          <IconButton size="large" color="inherit">
+            <SettingsIcon />
+          </IconButton>
+          <Typography variant='p' sx={{width:125}}>Settings</Typography>
+        </Button>
       </MenuItem>
     </Menu>
   );
@@ -133,33 +109,6 @@ export default function Navbar() {
             src={LittleLemonLogo}
           />
           <Box sx={{ flexGrow: 1 }} />
-          {/* <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box> */}
           <Box sx={{ display: { xs: 'flex', md: 'flex' } }}>
             <IconButton
               size="large"
@@ -175,7 +124,6 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
     </Box>
   );
 }
