@@ -12,6 +12,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Link } from 'react-router-dom';
 
 import Sidebar from './Sidebar';
 import LittleLemonLogo from '../assets/logos/logo4.png';
@@ -54,7 +55,7 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem sx={{p:0}}>
+      <MenuItem sx={{ p: 0 }}>
         <Button href='./notifications'>
           <IconButton
             size="large"
@@ -65,10 +66,10 @@ export default function Navbar() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <Typography variant='p' sx={{width:125}}>Notifications</Typography>
+          <Typography variant='p' sx={{ width: 125 }}>Notifications</Typography>
         </Button>
       </MenuItem>
-      <MenuItem sx={{p:0}}>
+      <MenuItem sx={{ p: 0 }}>
         <Button href='./profile'>
           <IconButton
             size="large"
@@ -79,15 +80,15 @@ export default function Navbar() {
           >
             <AccountCircle />
           </IconButton>
-          <Typography variant='p' sx={{width:125}}>Profile</Typography>
+          <Typography variant='p' sx={{ width: 125 }}>Profile</Typography>
         </Button>
       </MenuItem>
-      <MenuItem sx={{p:0}}>
+      <MenuItem sx={{ p: 0 }}>
         <Button href='./settings'>
           <IconButton size="large" color="inherit">
             <SettingsIcon />
           </IconButton>
-          <Typography variant='p' sx={{width:125}}>Settings</Typography>
+          <Typography variant='p' sx={{ width: 125 }}>Settings</Typography>
         </Button>
       </MenuItem>
     </Menu>
@@ -99,15 +100,16 @@ export default function Navbar() {
         <Toolbar>
           <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} />
           <Box sx={{ flexGrow: 1 }} />
-          <Box
-            component="img"
-            sx={{
-              height: 40,
-              // display: { xs: 'none', sm: 'block' }
-            }}
-            alt="Little Lemon Logo"
-            src={LittleLemonLogo}
-          />
+          <Link to="/">
+            <Box
+              component="img"
+              sx={{
+                height: 40,
+              }}
+              alt="Little Lemon Logo"
+              src={LittleLemonLogo}
+            />
+          </Link>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'flex', md: 'flex' } }}>
             <IconButton

@@ -7,39 +7,50 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link';
 
+import HomeIcon from '@mui/icons-material/Home';
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import ReservationIcon from '@mui/icons-material/EventSeat';
+import DeliveryIcon from '@mui/icons-material/TakeoutDining';
+import PickUpIcon from '@mui/icons-material/Hail';
+import InfoIcon from '@mui/icons-material/Info';
+
 const sections = [
   {
     title: "Home",
-    href: "/"
+    href: "/",
+    icon: HomeIcon
   },
   {
     title: "Menu",
-    href: "/menu"
+    href: "/menu",
+    icon: RestaurantMenuIcon
   },
   {
     title: "Reservation",
-    href: "/reservation"
+    href: "/reservation",
+    icon: ReservationIcon
   },
   {
     title: "Delivery",
-    href: "/delivery"
+    href: "/delivery",
+    icon: DeliveryIcon
   },
   {
     title: "Pick Up",
-    href: "/pickup"
+    href: "/pickup",
+    icon: PickUpIcon
   }
 ];
 
 const sections2 = [
   {
     title: "About Us",
-    href: "/about"
+    href: "/about",
+    icon: InfoIcon
   }
 ];
 
@@ -58,7 +69,7 @@ export default function Sidebar({ open, toggleSidebar }) {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 225 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -68,7 +79,7 @@ export default function Sidebar({ open, toggleSidebar }) {
           <ListItem key={section.title} disablePadding>
             <ListItemButton component={Link} to={section.href}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {React.createElement(section.icon)}
               </ListItemIcon>
               <ListItemText primary={section.title} />
             </ListItemButton>
@@ -81,7 +92,7 @@ export default function Sidebar({ open, toggleSidebar }) {
           <ListItem key={section.title} disablePadding>
             <ListItemButton component={Link} to={section.href}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {React.createElement(section.icon)}
               </ListItemIcon>
               <ListItemText primary={section.title} />
             </ListItemButton>

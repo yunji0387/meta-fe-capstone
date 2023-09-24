@@ -105,16 +105,17 @@ export default function Home() {
                     <FeaturedPost key={post.title} post={post} />
                 ))}
             </Grid>
-            <Grid container spacing={5} sx={{ mt: 3 }}>
+            <Grid container spacing={5}>
                 <Main posts={posts} mediumSize={8} />
-                <SideSection
+                <SideSection />
+                {/* <SideSection
                     title={sidesection.title}
                     description={sidesection.description}
                     archives={sidesection.archives}
                     address={address}
                     businessHours={businessHours}
                     social={sidesection.social}
-                />
+                /> */}
             </Grid>
         </Container>
     );
