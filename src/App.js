@@ -18,13 +18,31 @@ import Settings from './scenes/Settings';
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#fff',
+      dark: '#002884',
+      background: '#eee',
+      mainText: '#495E57',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  }
+});
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Navbar />
+          <Navbar theme={theme} />
           <main>
             <Box sx={{ pt: 8 }}>
               <Routes>

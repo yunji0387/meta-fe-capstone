@@ -7,6 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link';
@@ -20,41 +21,38 @@ import InfoIcon from '@mui/icons-material/Info';
 
 const sections = [
   {
-    title: "Home",
+    title: "HOME",
     href: "/",
     icon: HomeIcon
   },
   {
-    title: "Menu",
+    title: "MENU",
     href: "/menu",
     icon: RestaurantMenuIcon
   },
   {
-    title: "Reservation",
+    title: "RESERVATION",
     href: "/reservation",
     icon: ReservationIcon
   },
   {
-    title: "Delivery",
+    title: "DELIVERY",
     href: "/delivery",
     icon: DeliveryIcon
   },
   {
-    title: "Pick Up",
+    title: "PICK UP",
     href: "/pickup",
     icon: PickUpIcon
-  }
-];
-
-const sections2 = [
+  },
   {
-    title: "About Us",
+    title: "ABOUT US",
     href: "/about",
     icon: InfoIcon
   }
 ];
 
-export default function Sidebar({ open, toggleSidebar }) {
+export default function Sidebar({ open, toggleSidebar, theme }) {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -75,29 +73,24 @@ export default function Sidebar({ open, toggleSidebar }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        <Divider />
         {sections.map((section, index) => (
-          <ListItem key={section.title} disablePadding>
-            <ListItemButton component={Link} to={section.href}>
-              <ListItemIcon>
-                {React.createElement(section.icon)}
-              </ListItemIcon>
-              <ListItemText primary={section.title} />
-            </ListItemButton>
-          </ListItem>
+          <Box>
+            <Divider />
+            <ListItem key={section.title} disablePadding>
+              <ListItemButton component={Link} to={section.href}>
+                <ListItemIcon>
+                  {React.createElement(section.icon)}
+                </ListItemIcon>
+                <ListItemText
+                  disableTypography
+                  primary={<Typography variant="p" sx={{ color: theme.palette.primary.mainText }}>{section.title}</Typography>} />
+              </ListItemButton>
+            </ListItem>
+            <Divider />
+          </Box>
         ))}
-      </List>
-      <Divider />
-      <List>
-        {sections2.map((section, index) => (
-          <ListItem key={section.title} disablePadding>
-            <ListItemButton component={Link} to={section.href}>
-              <ListItemIcon>
-                {React.createElement(section.icon)}
-              </ListItemIcon>
-              <ListItemText primary={section.title} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <Divider />
       </List>
     </Box>
   );
@@ -108,7 +101,7 @@ export default function Sidebar({ open, toggleSidebar }) {
         <IconButton
           size="large"
           edge="start"
-          color="inherit"
+          color={theme.palette.primary.main}
           aria-label="open drawer"
           sx={{ mr: 2 }}
           onClick={toggleSidebar} // Toggle the Sidebar drawer

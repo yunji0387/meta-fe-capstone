@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
 import MainFeaturedPost from '../components/MainFeaturedPost';
-import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import SideSection from '../components/SideSection';
 import Divider from '@mui/material/Divider';
 import mainPostImg from '../assets/images/littleLemon.jpg';
@@ -58,7 +58,7 @@ const sidesection = {
 
 export default function About() {
     return (
-        <Container sx={{ mt: 3 }}>
+        <Container sx={{ mt: 2 }}>
             <Typography variant='h3' textAlign='center'>
                 About Us
             </Typography>
@@ -69,7 +69,7 @@ export default function About() {
                 {chefList.map((chef) => (
                     <Grid item>
                         <Grid container spacing={0} direction='column'>
-                            <Paper
+                            {/* <Paper
                                 sx={{
                                     position: 'relative',
                                     backgroundSize: 'cover',
@@ -81,13 +81,32 @@ export default function About() {
                                 }}
                             />
                             <Typography variant='h5' textAlign='center'>{chef.title}</Typography>
-                            <Typography variant='p' textAlign='center'>{chef.name}</Typography>
+                            <Typography variant='p' textAlign='center'>{chef.name}</Typography> */}
+                            <Paper
+                                sx={{
+                                    position: 'relative',
+                                    backgroundSize: 'cover',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'center',
+                                    backgroundImage: `url(${chef.image})`,
+                                    width: 200,
+                                    height: 300,
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'flex-end', // Pushes content to the bottom
+                                }}
+                            >
+                                <Box sx={{ padding: '16px' }}>
+                                    <Typography variant='h5' textAlign='center'>{chef.title}</Typography>
+                                    <Typography variant='p' textAlign='center'>{chef.name}</Typography>
+                                </Box>
+                            </Paper>
                         </Grid>
                     </Grid>
                 ))}
             </Grid>
-            <Divider />
-            <Typography variant='h4' textAlign='center' sx={{ mt: 3 }}>Location</Typography>
+            <Divider sx={{ mt: 2 }} />
+            <Typography variant='h4' textAlign='center' sx={{ mt: 2 }}>Location</Typography>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={8}>
                     {/* <Paper

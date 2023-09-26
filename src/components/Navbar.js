@@ -17,7 +17,9 @@ import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import LittleLemonLogo from '../assets/logos/logo4.png';
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const { theme } = props;
+
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
@@ -95,10 +97,10 @@ export default function Navbar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+    <Box sx={{ flexGrow: 1 }} >
+      <AppBar position="fixed" sx={{ backgroundColor: theme.palette.primary.background }}>
         <Toolbar>
-          <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} />
+          <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} theme={theme} />
           <Box sx={{ flexGrow: 1 }} />
           <Link to="/">
             <Box
@@ -118,7 +120,7 @@ export default function Navbar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              color= {theme.palette.primary.mainText}
             >
               <MoreIcon />
             </IconButton>
