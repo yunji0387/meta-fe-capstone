@@ -79,7 +79,7 @@ export default function Sidebar({ open, toggleSidebar, theme }) {
             <Divider />
             <ListItem key={section.title} disablePadding>
               <ListItemButton component={Link} to={section.href}>
-                <ListItemIcon>
+                <ListItemIcon sx={{ color: theme.palette.primary.main }}>
                   {React.createElement(section.icon)}
                 </ListItemIcon>
                 <ListItemText
@@ -101,12 +101,11 @@ export default function Sidebar({ open, toggleSidebar, theme }) {
         <IconButton
           size="large"
           edge="start"
-          color={theme.palette.primary.main}
           aria-label="open drawer"
           sx={{ mr: 2 }}
           onClick={toggleSidebar} // Toggle the Sidebar drawer
         >
-          <MenuIcon />
+          <MenuIcon sx={{color: theme.palette.primary.contrastMain}}/>
         </IconButton>
         <Drawer
           anchor={'left'}

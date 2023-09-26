@@ -22,10 +22,12 @@ const theme = createTheme({
   palette: {
     primary: {
       light: '#757ce8',
-      main: '#fff',
+      main: '#495E57',
       dark: '#002884',
       background: '#eee',
+      contrastMain: '#fff',
       mainText: '#495E57',
+      contrastText: '#fff',
     },
     secondary: {
       light: '#ff7961',
@@ -46,7 +48,7 @@ function App() {
           <main>
             <Box sx={{ pt: 8 }}>
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home theme={theme} />} />
                 <Route path="/delivery" element={<Delivery />} />
                 <Route path="/pickup" element={<PickUp />} />
                 <Route path="/menu" element={<Menu />} />

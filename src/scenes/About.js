@@ -45,18 +45,8 @@ const chefList = [
     },
 ];
 
-const sidesection = {
-    title: 'About',
-    description:
-        'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
-    social: [
-        { name: 'GitHub', icon: GitHubIcon },
-        { name: 'Twitter', icon: TwitterIcon },
-        { name: 'Facebook', icon: FacebookIcon },
-    ],
-};
-
 export default function About() {
+
     return (
         <Container sx={{ mt: 2 }}>
             <Typography variant='h3' textAlign='center'>
@@ -141,9 +131,6 @@ export default function About() {
                     </Paper>
                 </Grid>
                 <SideSection />
-                {/* <Grid item xs={12} md={4}>
-                    <SideSection />
-                </Grid> */}
             </Grid>
         </Container>
     );

@@ -22,30 +22,18 @@ function FeaturedPost(props) {
           backgroundImage: `url(${post.image})`,
         }}
       >
-        {/* <Card sx={{ display: 'flex' }}>
-          <CardContent sx={{ flex: 1 }}>
-            <Typography component="h2" variant="h5">
-              {post.title}
-            </Typography>
-            <Typography variant="subtitle1" color="text.secondary">
-              {post.date}
-            </Typography>
-            <Typography variant="subtitle1" paragraph>
-              {post.description}
-            </Typography>
-          </CardContent>
-        </Card> */}
         <Grid container>
             <Box
               sx={{
                 position: 'relative',
                 p: 3,
+                backgroundColor: 'rgba(0,0,0,.3)'
               }}
             >
               <Typography component="h2" variant="h5">
                 {post.title}
               </Typography>
-              <Typography variant="subtitle1" color="text.secondary">
+              <Typography variant="subtitle1">
                 {post.date}
               </Typography>
               <Typography variant="subtitle1" paragraph>

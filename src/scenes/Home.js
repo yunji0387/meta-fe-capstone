@@ -7,9 +7,9 @@ import FeaturedPost from '../components/FeaturedPost';
 import Main from '../components/Main';
 import SideSection from '../components/SideSection';
 
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import ReservationIcon from '@mui/icons-material/EventSeat';
+import DeliveryIcon from '@mui/icons-material/TakeoutDining';
+import PickUpIcon from '@mui/icons-material/Hail';
 
 import mainPostImg from '../assets/images/littleLemon.jpg';
 import christmasPostImg from '../assets/images/christmas.jpg';
@@ -31,19 +31,20 @@ const mainFeaturedPost = {
 const featuredCategories = [
     {
         title: 'Reservation',
-        href: "/reservation"
-    }, 
+        href: "/reservation",
+        icon: ReservationIcon
+    },
     {
         title: 'Delivery',
-        href: "/delivery"
-    }, 
+        href: "/delivery",
+        icon: DeliveryIcon
+    },
     {
         title: 'Pick Up',
-        href: "/pickup"
+        href: "/pickup",
+        icon: PickUpIcon
     }
 ];
-
-// const featuredCategories = ['Reservation', 'Delivery', 'Pick Up'];
 
 const featuredPosts = [
     {
@@ -64,42 +65,15 @@ const featuredPosts = [
     },
 ];
 
-const sidesection = {
-    title: 'About',
-    description:
-        'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
-    social: [
-        { name: 'GitHub', icon: GitHubIcon },
-        { name: 'Twitter', icon: TwitterIcon },
-        { name: 'Facebook', icon: FacebookIcon },
-    ],
-};
+export default function Home(props) {
+    const { theme } = props;
 
-const address = {
-    addressLine: '8888 Turin Hwy',
-    city: 'Chicago',
-    postalCode: 'C5C 3T9',
-    state: 'Illinois',
-    country: 'United States'
-};
-
-const businessHours = {
-    Mon: '10:00am - 10:00pm',
-    Tue: '10:00am - 10:00pm',
-    Wed: 'Closed',
-    Thu: '10:00am - 10:00pm',
-    Fri: '10:00am - 10:00pm',
-    Sat: '10:00am - 10:00pm',
-    Sun: '10:00am - 10:00pm'
-};
-
-export default function Home() {
     return (
         <Container sx={{ mt: 3 }}>
             <MainFeaturedPost post={mainFeaturedPost} />
             <Grid container spacing={4}>
                 {featuredCategories.map((category) => (
-                    <FeaturedCategory category={category} />
+                    <FeaturedCategory category={category} theme={theme} />
                 ))}
                 {featuredPosts.map((post) => (
                     <FeaturedPost key={post.title} post={post} />
@@ -108,14 +82,6 @@ export default function Home() {
             <Grid container spacing={5}>
                 <Main posts={posts} mediumSize={8} />
                 <SideSection />
-                {/* <SideSection
-                    title={sidesection.title}
-                    description={sidesection.description}
-                    archives={sidesection.archives}
-                    address={address}
-                    businessHours={businessHours}
-                    social={sidesection.social}
-                /> */}
             </Grid>
         </Container>
     );

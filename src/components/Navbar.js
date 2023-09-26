@@ -62,7 +62,6 @@ export default function Navbar(props) {
           <IconButton
             size="large"
             aria-label="show 17 new notifications"
-            color="inherit"
           >
             <Badge badgeContent={17} color="error">
               <NotificationsIcon />
@@ -78,7 +77,6 @@ export default function Navbar(props) {
             aria-label="account of current user"
             aria-controls="primary-search-account-menu"
             aria-haspopup="true"
-            color="inherit"
           >
             <AccountCircle />
           </IconButton>
@@ -87,7 +85,7 @@ export default function Navbar(props) {
       </MenuItem>
       <MenuItem sx={{ p: 0 }}>
         <Button href='./settings'>
-          <IconButton size="large" color="inherit">
+          <IconButton size="large">
             <SettingsIcon />
           </IconButton>
           <Typography variant='p' sx={{ width: 125 }}>Settings</Typography>
@@ -98,15 +96,22 @@ export default function Navbar(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="fixed" sx={{ backgroundColor: theme.palette.primary.background }}>
-        <Toolbar>
+      <AppBar position="fixed">
+        <Toolbar sx={{ display: 'flex', alignItems: 'center' }}>
           <Sidebar open={isSidebarOpen} toggleSidebar={handleSidebarToggle} theme={theme} />
           <Box sx={{ flexGrow: 1 }} />
-          <Link to="/">
+          <Link style={{ textDecoration: 'none' }} to="/">
             <Box
               component="img"
               sx={{
-                height: 40,
+                height: 50,
+                backgroundColor: '#fff',
+                marginTop: 1,
+                paddingTop: 0.5,
+                paddingBottom: 0.5,
+                paddingLeft: 1,
+                paddingRight: 1,
+                borderRadius: 10
               }}
               alt="Little Lemon Logo"
               src={LittleLemonLogo}
@@ -120,9 +125,8 @@ export default function Navbar(props) {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color= {theme.palette.primary.mainText}
             >
-              <MoreIcon />
+              <MoreIcon sx={{ color: theme.palette.primary.contrastMain }} />
             </IconButton>
           </Box>
         </Toolbar>

@@ -35,8 +35,7 @@ const social = [
   { name: 'Facebook', icon: FacebookIcon },
 ];
 
-function SideSection(props) {
-  // const { address, businessHours, social } = props;
+function SideSection() {
 
   return (
     <Grid item xs={12} md={4}>
@@ -51,12 +50,6 @@ function SideSection(props) {
         <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
           Business Hours
         </Typography>
-        {/* {Object.entries(businessHours).map(([day, hours]) => (
-          <div key={day} style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Typography>{`${day}`}</Typography>
-            <Typography>{hours}</Typography>
-          </div>
-        ))} */}
         {Object.entries(businessHours).map(([day, hours]) => (
         <Grid container key={day} justifyContent="space-between" sx={{ maxWidth: 230 }}>
           <Grid item>
@@ -88,7 +81,7 @@ function SideSection(props) {
           </Link>
         ))
       }
-    </Grid >
+    </Grid>
   );
 }
 

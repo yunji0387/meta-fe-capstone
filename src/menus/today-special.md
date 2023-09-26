@@ -2,7 +2,7 @@
 
 <hr style="border:1px solid black">
 
-_December 1, 2023 by [Chef. Alberto](/)_
+_December 1, 2023 by **Chef. Alberto**_
 
 Curabitur blandit tempus porttitor. **Nullam quis risus eget urna mollis** ornare vel eu leo.
 Nullam id dolor id nibh ultricies vehicula ut id elit.
