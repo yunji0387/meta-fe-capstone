@@ -75,7 +75,7 @@ export default function Reservation(props) {
                 Reservation
             </Typography>
 
-            {showReservationForm && (
+            {/* {showReservationForm && (
                 <>
                     <Typography variant='h6' textAlign='center'>
                         Please complete the table reservation form below.
@@ -104,7 +104,7 @@ export default function Reservation(props) {
                         initialData={contactInfoData} // Pass the initialData prop
                     />
                 </>
-            )}
+            )} */}
         </Container>
     );
 }

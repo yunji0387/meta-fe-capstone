@@ -41,61 +41,58 @@ function Policy() {
 
 function Footer() {
   return (
-    <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
-      <Container maxWidth="lg">
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            gap: 2,
-          }}
-        >
-          <img
-            src={FooterLogo}
-            alt="Little Lemon Footer Logo"
-            style={{ height: 80 }}
-          />
+    <footer>
+      <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
+        <Container maxWidth="lg">
           <Box
             sx={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              flexDirection: 'column',
-              gap: 0,
+              flexDirection: 'row',
+              gap: 2,
             }}
           >
-            <Typography
-              variant="subtitle1"
-              align="center"
-              color="text.secondary"
-              component="p"
+            <img
+              src={FooterLogo}
+              alt="Little Lemon Footer Logo"
+              style={{ height: 80 }}
+            />
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                gap: 0,
+              }}
             >
-              {phoneNumber}
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              align="center"
-              color="text.secondary"
-              component="p"
-            >
-              <Link color="inherit" href={`mailto:${email}`}>
-              {email}
-              </Link>
-            </Typography>
+              <Typography
+                variant="subtitle1"
+                align="center"
+                color="text.secondary"
+                component="p"
+              >
+                {phoneNumber}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                align="center"
+                color="text.secondary"
+                component="p"
+              >
+                <Link color="inherit" href={`mailto:${email}`}>
+                  {email}
+                </Link>
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-        <Copyright />
-        <Policy />
-      </Container>
-    </Box>
+          <Copyright />
+          <Policy />
+        </Container>
+      </Box>
+    </footer>
   );
 }
-
-Footer.propTypes = {
-  description: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-};
 
 export default Footer;

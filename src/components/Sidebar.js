@@ -75,9 +75,9 @@ export default function Sidebar({ open, toggleSidebar, theme }) {
       <List>
         <Divider />
         {sections.map((section, index) => (
-          <Box>
+          <Box key={index}>
             <Divider />
-            <ListItem key={section.title} disablePadding>
+            <ListItem key={index} disablePadding>
               <ListItemButton component={Link} to={section.href}>
                 <ListItemIcon sx={{ color: theme.palette.primary.main }}>
                   {React.createElement(section.icon)}
@@ -96,7 +96,7 @@ export default function Sidebar({ open, toggleSidebar, theme }) {
   );
 
   return (
-    <div>
+    <Box>
       <React.Fragment key={'left'}>
         <IconButton
           size="large"
@@ -115,6 +115,6 @@ export default function Sidebar({ open, toggleSidebar, theme }) {
           {list('left')}
         </Drawer>
       </React.Fragment>
-    </div>
+    </Box>
   );
 }
