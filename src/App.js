@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -14,9 +14,6 @@ import About from './scenes/About';
 import Notifications from './scenes/Notifications';
 import Profile from './scenes/Profile';
 import Settings from './scenes/Settings';
-
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
 
 const theme = createTheme({
   palette: {
@@ -35,7 +32,11 @@ const theme = createTheme({
       dark: '#ba000d',
       contrastText: '#000',
     },
-  }
+  },
+  typography: {
+    titleText: 'Permanent Marker, cursive',
+    contentText: 'Handlee, cursive',
+  },
 });
 
 function App() {
@@ -49,14 +50,14 @@ function App() {
             <Box sx={{ pt: 8 }}>
               <Routes>
                 <Route path="/" element={<Home theme={theme} />} />
-                <Route path="/delivery" element={<Delivery />} />
-                <Route path="/pickup" element={<PickUp />} />
-                <Route path="/menu" element={<Menu />} />
-                <Route path="/reservation" element={<Reservation />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/notifications" element={<Notifications />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/settings" element={<Settings />} />
+                <Route path="/delivery" element={<Delivery theme={theme} />} />
+                <Route path="/pickup" element={<PickUp theme={theme} />} />
+                <Route path="/menu" element={<Menu theme={theme} />} />
+                <Route path="/reservation" element={<Reservation theme={theme} />} />
+                <Route path="/about" element={<About theme={theme} />} />
+                <Route path="/notifications" element={<Notifications theme={theme} />} />
+                <Route path="/profile" element={<Profile theme={theme} />} />
+                <Route path="/settings" element={<Settings theme={theme} />} />
               </Routes>
             </Box>
           </main>

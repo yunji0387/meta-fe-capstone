@@ -11,7 +11,7 @@ function FeaturedCategory(props) {
 
     return (
         <Grid item xs={12} md={4}>
-            <Card sx={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: theme.palette.primary.main }}>
+            <Card sx={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: theme.palette.primary.main, borderRadius: 10 }}>
                 <CardActionArea component="a" href={category.href} >
                     <CardContent>
                         <Box sx={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

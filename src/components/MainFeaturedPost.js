@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 
 function MainFeaturedPost(props) {
-  const { post } = props;
+  const { post, theme } = props;
 
   return (
     <Paper
@@ -40,13 +40,13 @@ function MainFeaturedPost(props) {
               pr: { md: 0 },
             }}
           >
-            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+            <Typography component="h1" variant="h3" color="inherit" gutterBottom sx={{ fontFamily: theme.typography.titleText }}>
               {post.title}
             </Typography>
-            <Typography variant="h4" color="inherit" paragraph>
+            <Typography variant="h4" color="inherit" paragraph sx={{ fontFamily: theme.typography.titleText }}>
               {post.location}
             </Typography>
-            <Typography variant="h6" color="inherit" paragraph>
+            <Typography variant="h6" color="inherit" paragraph sx={{ fontFamily: theme.typography.contentText }}>
               {post.description}
             </Typography>
           </Box>

@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 
 function Main(props) {
-  const { posts, mediumSize, padding, bgColor, addTopDivider } = props;
+  const { posts, mediumSize, padding, bgColor, addTopDivider, theme } = props;
   const [markdownContent, setMarkdownContent] = useState([]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function Main(props) {
       {markdownContent.map((content, index) => (
         <Box key={index}>
           {addTopDivider? <Divider /> : null}
-          <Markdown className="markdown">
+          <Markdown className="markdown" theme={theme}>
             {content}
           </Markdown>
           <Divider />

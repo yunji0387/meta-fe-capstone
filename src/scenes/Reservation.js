@@ -4,7 +4,9 @@ import Typography from '@mui/material/Typography';
 import ReservationForm from '../components/ReservationForm';
 import ContactInfoForm from '../components/ContactInfoForm';
 
-export default function Reservation() {
+export default function Reservation(props) {
+    const { theme } = props;
+
     // Define state variables to manage form visibility and data
     const [showReservationForm, setShowReservationForm] = React.useState(true);
     const [showContactInfoForm, setShowContactInfoForm] = React.useState(false);
@@ -69,7 +71,7 @@ export default function Reservation() {
 
     return (
         <Container sx={{ mt: 3 }}>
-            <Typography variant='h3' textAlign='center'>
+            <Typography variant='h3' textAlign='center' sx={{fontFamily: theme.typography.titleText}}>
                 Reservation
             </Typography>
 

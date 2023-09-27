@@ -45,16 +45,17 @@ const chefList = [
     },
 ];
 
-export default function About() {
+export default function About(props) {
+    const { theme } = props;
 
     return (
         <Container sx={{ mt: 2 }}>
-            <Typography variant='h3' textAlign='center'>
+            <Typography variant='h3' textAlign='center' sx={{fontFamily: theme.typography.titleText}}>
                 About Us
             </Typography>
             <MainFeaturedPost post={mainFeaturedPost} />
 
-            <Typography variant='h4' textAlign='center'>Our Chefs</Typography>
+            <Typography variant='h4' textAlign='center' sx={{fontFamily: theme.typography.titleText}}>Our Chefs</Typography>
             <Grid container spacing={5} justifyContent="center">
                 {chefList.map((chef) => (
                     <Grid item>
@@ -96,7 +97,7 @@ export default function About() {
                 ))}
             </Grid>
             <Divider sx={{ mt: 2 }} />
-            <Typography variant='h4' textAlign='center' sx={{ mt: 2 }}>Location</Typography>
+            <Typography variant='h4' textAlign='center' sx={{ mt: 2, fontFamily: theme.typography.titleText }}>Location</Typography>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={8}>
                     {/* <Paper

@@ -12,18 +12,20 @@ import drinkMenu from '../menus/drink-menu.md';
 
 const menus = [todaySpecialMenu];
 
-export default function Menu() {
+export default function Menu(props) {
+    const { theme } = props;
+
     return (
         <Container sx={{ mt: 3 }}>
-            <Typography variant='h3' textAlign='center'>
+            <Typography variant='h3' textAlign='center' sx={{fontFamily: theme.typography.titleText}}>
                 Menu
             </Typography>
-            <Main posts={menus} />
+            <Main posts={menus} theme={theme} />
             <Divider />
             <Grid container spacing={2} sx={{ mt: 0 }}>
-                <Main posts={[mainCourseMenu]} mediumSize={7} />
+                <Main posts={[mainCourseMenu]} mediumSize={7} theme={theme} />
                 <Grid item xs={12} md={5}>
-                    <Main posts={[appertizerMenu, dessertMenu, drinkMenu]} mediumSize={12} padding={2} bgColor={'grey.200'} addTopDivider={true} />
+                    <Main posts={[appertizerMenu, dessertMenu, drinkMenu]} mediumSize={12} padding={2} bgColor={'grey.200'} addTopDivider={true} theme={theme} />
                 </Grid>
             </Grid>
         </Container>

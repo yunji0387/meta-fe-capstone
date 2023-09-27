@@ -6,7 +6,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
 function FeaturedPost(props) {
-  const { post } = props;
+  const { post, theme } = props;
 
   return (
     <Grid item xs={12} md={6}>
@@ -30,13 +30,13 @@ function FeaturedPost(props) {
                 backgroundColor: 'rgba(0,0,0,.3)'
               }}
             >
-              <Typography component="h2" variant="h5">
+              <Typography component="h2" variant="h5" sx={{fontFamily: theme.typography.titleText}}>
                 {post.title}
               </Typography>
               <Typography variant="subtitle1">
                 {post.date}
               </Typography>
-              <Typography variant="subtitle1" paragraph>
+              <Typography variant="subtitle1" paragraph sx={{fontFamily: theme.typography.contentText}}>
                 {post.description}
               </Typography>
             </Box>
