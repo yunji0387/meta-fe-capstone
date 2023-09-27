@@ -5,7 +5,7 @@ import CurrUnavailable from '../components/CurrUnavailable';
 
 export default function Profile(props) {
     const { theme } = props;
-    
+
     return (
         <Container sx={{ mt: 3 }}>
             <Typography variant='h3' textAlign='center' sx={{ mb: 1 }}>

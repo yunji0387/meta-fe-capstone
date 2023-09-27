@@ -85,14 +85,14 @@ function SideSection() {
   );
 }
 
-SideSection.propTypes = {
-  social: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.elementType,
-      name: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  title: PropTypes.string.isRequired,
-};
+// SideSection.propTypes = {
+//   social: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       icon: PropTypes.elementType,
+//       name: PropTypes.string.isRequired,
+//     }),
+//   ).isRequired,
+//   title: PropTypes.string.isRequired,
+// };
 
 export default SideSection;

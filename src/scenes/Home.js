@@ -73,7 +73,7 @@ export default function Home(props) {
             <MainFeaturedPost post={mainFeaturedPost} theme={theme} />
             <Grid container spacing={4}>
                 {featuredCategories.map((category) => (
-                    <FeaturedCategory category={category} theme={theme} />
+                    <FeaturedCategory key={category.title} category={category} theme={theme} />
                 ))}
                 {featuredPosts.map((post) => (
                     <FeaturedPost key={post.title} post={post} theme={theme} />
