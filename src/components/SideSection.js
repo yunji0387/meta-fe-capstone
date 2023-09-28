@@ -29,9 +29,9 @@ const businessHours = {
 };
 
 const social = [
-  { name: 'GitHub', icon: GitHubIcon },
-  { name: 'Twitter', icon: TwitterIcon },
-  { name: 'Facebook', icon: FacebookIcon },
+  { name: 'GitHub', icon: GitHubIcon, href: "https://github.com/yunji0387" },
+  { name: 'Twitter', icon: TwitterIcon, href: "https://twitter.com/" },
+  { name: 'Facebook', icon: FacebookIcon, href: "https://www.facebook.com/" },
 ];
 
 function SideSection() {
@@ -70,7 +70,7 @@ function SideSection() {
             key={network.name}
             display="block"
             variant="body1"
-            href="#"
+            href={network.href}
             sx={{ mb: 0.5 }}
           >
             <Stack direction="row" spacing={1} alignItems="center">
