@@ -105,7 +105,7 @@ export default function Navbar(props) {
               component="img"
               sx={{
                 height: 50,
-                backgroundColor: '#fff',
+                backgroundColor: theme.palette.primary.light,
                 marginTop: 1,
                 paddingTop: 0.5,
                 paddingBottom: 0.5,
@@ -126,7 +126,7 @@ export default function Navbar(props) {
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
             >
-              <MoreIcon sx={{ color: theme.palette.primary.contrastMain }} />
+              <MoreIcon sx={{ color: theme.palette.primary.light }} />
             </IconButton>
           </Box>
         </Toolbar>

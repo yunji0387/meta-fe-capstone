@@ -105,7 +105,7 @@ export default function Sidebar({ open, toggleSidebar, theme }) {
           sx={{ mr: 2 }}
           onClick={toggleSidebar} // Toggle the Sidebar drawer
         >
-          <MenuIcon sx={{color: theme.palette.primary.contrastMain}}/>
+          <MenuIcon sx={{color: theme.palette.primary.light}}/>
         </IconButton>
         <Drawer
           anchor={'left'}

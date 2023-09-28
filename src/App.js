@@ -18,19 +18,17 @@ import Settings from './scenes/Settings';
 const theme = createTheme({
   palette: {
     primary: {
-      light: '#757ce8',
+      light: '#fff',
       main: '#495E57',
-      dark: '#002884',
-      background: '#eee',
-      contrastMain: '#fff',
+      dark: '#242e2b',
       mainText: '#495E57',
       contrastText: '#fff',
     },
     secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
+      light: '#ababab',
+      main: '#8c8c8c',
+      dark: '#636363',
+      contrastText: '#fff',
     },
   },
   typography: {
