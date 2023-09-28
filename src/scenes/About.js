@@ -13,10 +13,6 @@ import SousChefImg from '../assets/images/chef-brandon.jpg';
 import PastryChefImg from '../assets/images/pastry-chef-jolin.jpg';
 import LocationMapImg from '../assets/images/littleLemonMap.png';
 
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-
 const mainFeaturedPost = {
     title: 'Little Lemon',
     location: 'Chicago',
