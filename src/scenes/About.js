@@ -53,8 +53,8 @@ export default function About(props) {
 
             <Typography variant='h4' textAlign='center' sx={{fontFamily: theme.typography.titleText}}>Our Chefs</Typography>
             <Grid container spacing={5} justifyContent="center">
-                {chefList.map((chef) => (
-                    <Grid item>
+                {chefList.map((chef, index) => (
+                    <Grid item key={index}>
                         <Grid container spacing={0} direction='column'>
                             <Paper
                                 sx={{
@@ -63,16 +63,17 @@ export default function About(props) {
                                     backgroundRepeat: 'no-repeat',
                                     backgroundPosition: 'center',
                                     backgroundImage: `url(${chef.image})`,
+                                    borderRadius: 2,
                                     width: 200,
                                     height: 300,
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    justifyContent: 'flex-end', // Pushes content to the bottom
+                                    justifyContent: 'flex-end',
                                 }}
                             >
-                                <Box sx={{ padding: '16px' }}>
-                                    <Typography variant='h5' textAlign='center'>{chef.title}</Typography>
-                                    <Typography variant='p' textAlign='center'>{chef.name}</Typography>
+                                <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', bgcolor: theme.palette.primary.main, borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }}>
+                                    <Typography variant='h5' fontFamily={theme.typography.titleText} color={theme.palette.primary.light}>{chef.title}</Typography>
+                                    <Typography variant='p' fontFamily={theme.typography.contentText} color={theme.palette.primary.light}>{chef.name}</Typography>
                                 </Box>
                             </Paper>
                         </Grid>

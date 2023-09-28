@@ -124,26 +124,6 @@ export default function Reservation(props) {
         // Perform any necessary actions related to ContactInfoForm submission
         // You can choose to redirect or display a confirmation message here
     };
-    // Function to handle submission of ContactInfoForm
-    // const handleContactInfoSubmit = () => {
-    //     // Store the data entered in the ContactInfoForm
-    //     // setContactInfoData(data);
-    //     const updatedContactData = {
-    //         firstName: firstName,
-    //         lastName: lastName,
-    //         email: email,
-    //         phoneNumber: phoneNumber,
-    //     };
-    //     setContactInfoData(updatedContactData);
-    //     // Perform any necessary actions related to ContactInfoForm submission
-    //     // You can choose to redirect or display a confirmation message here
-
-    //     const reservationInfoString = `Date: ${reservationData.date}\nTime: ${reservationData.time}\nGuests: ${reservationData.guests}\nOccasion: ${reservationData.occasion}`;
-    //     const contactInfoString = `\nFirst Name: ${contactInfoData.firstName}\nLast Name: ${contactInfoData.lastName}\nEmail: ${contactInfoData.email}\nPhone Number: ${contactInfoData.phoneNumber}`;
-
-    //     // Display contactInfoString in an alert
-    //     alert(reservationInfoString + contactInfoString);
-    // };
 
     // Function to go back to Reservation page
     const handleBackToReservation = () => {
@@ -199,7 +179,6 @@ export default function Reservation(props) {
                         onPhoneNumberChange={handlePhoneNumberChange}
                         reservationData={reservationData}
                         theme={theme}
-                    // initialData={contactInfoData} // Pass the initialData prop
                     />
                 </>
             )}

@@ -32,7 +32,6 @@ export default function ReservationForm({ onSubmit, availableTimes, onTimeChange
                             label="Choose time"
                             id="res-time"
                             value={time}
-                            // onChange={handleTimeChange}
                             onChange={onTimeChange}
                         >
                             {availableTimes.map((timeOption) => (

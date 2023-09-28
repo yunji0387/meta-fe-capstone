@@ -67,10 +67,10 @@ function SideSection() {
       {
         social.map((network) => (
           <Link
+            key={network.name}
             display="block"
             variant="body1"
             href="#"
-            key={network.name}
             sx={{ mb: 0.5 }}
           >
             <Stack direction="row" spacing={1} alignItems="center">
