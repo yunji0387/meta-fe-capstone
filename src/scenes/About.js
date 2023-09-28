@@ -53,26 +53,13 @@ export default function About(props) {
             <Typography variant='h3' textAlign='center' sx={{fontFamily: theme.typography.titleText}}>
                 About Us
             </Typography>
-            <MainFeaturedPost post={mainFeaturedPost} />
+            <MainFeaturedPost post={mainFeaturedPost} theme={theme} />
 
             <Typography variant='h4' textAlign='center' sx={{fontFamily: theme.typography.titleText}}>Our Chefs</Typography>
             <Grid container spacing={5} justifyContent="center">
                 {chefList.map((chef) => (
                     <Grid item>
                         <Grid container spacing={0} direction='column'>
-                            {/* <Paper
-                                sx={{
-                                    position: 'relative',
-                                    backgroundSize: 'cover',
-                                    backgroundRepeat: 'no-repeat',
-                                    backgroundPosition: 'center',
-                                    backgroundImage: `url(${chef.image})`,
-                                    width: 200,
-                                    height: 300
-                                }}
-                            />
-                            <Typography variant='h5' textAlign='center'>{chef.title}</Typography>
-                            <Typography variant='p' textAlign='center'>{chef.name}</Typography> */}
                             <Paper
                                 sx={{
                                     position: 'relative',
@@ -100,17 +87,6 @@ export default function About(props) {
             <Typography variant='h4' textAlign='center' sx={{ mt: 2, fontFamily: theme.typography.titleText }}>Location</Typography>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={8}>
-                    {/* <Paper
-                        sx={{
-                            position: 'relative',
-                            backgroundSize: 'contain',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'center',
-                            backgroundImage: `url(${LocationMapImg})`,
-                            width: '100%',
-                            height: 300,
-                        }}
-                    /> */}
                     <Paper
                         sx={{
                             position: 'relative',
