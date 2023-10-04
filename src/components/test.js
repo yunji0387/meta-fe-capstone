@@ -1,6 +1,4 @@
 import React from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -9,27 +7,10 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
-export default function ReservationForm({ availableTimes, onSubmit, reservationData }) {
-    const formik = useFormik({
-        initialValues: {
-            date: reservationData.date,
-            time: reservationData.time,
-            guests: reservationData.guests,
-            occasion: reservationData.occasion
-        },
-        validationSchema: Yup.object({
-            date: Yup.date().required('Date is required'),
-            time: Yup.string().required('Time is required'),
-            guests: Yup.number().min(1).max(10).required('Number of guests is required'),
-            occasion: Yup.string().required('Occasion is required')
-        }),
-        onSubmit: (values) => {
-            onSubmit(values);
-        },
-    });
+export default function ReservationForm({ onSubmit, availableTimes, onTimeChange, time, onDateChange, date, onGuestsChange, guests, onOccasionChange, occasion }) {
 
     return (
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={onSubmit}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <TextField
@@ -37,19 +18,21 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                         label="Choose date"
                         type="date"
                         id="res-date"
-                        InputLabelProps={{ shrink: true }}
-                        {...formik.getFieldProps('date')}
-                        error={formik.touched.date && Boolean(formik.errors.date)}
-                        helperText={formik.touched.date && formik.errors.date}
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        value={date}
+                        onChange={onDateChange}
                     />
                 </Grid>
                 <Grid item xs={12}>
-                    <FormControl fullWidth error={formik.touched.time && Boolean(formik.errors.time)}>
+                    <FormControl fullWidth>
                         <InputLabel htmlFor="res-time">Choose time</InputLabel>
                         <Select
                             label="Choose time"
                             id="res-time"
-                            {...formik.getFieldProps('time')}
+                            value={time}
+                            onChange={onTimeChange}
                         >
                             {availableTimes.map((timeOption) => (
                                 <MenuItem key={timeOption} value={timeOption}>
@@ -57,7 +40,6 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                                 </MenuItem>
                             ))}
                         </Select>
-                        {formik.touched.time && <div>{formik.errors.time}</div>}
                     </FormControl>
                 </Grid>
                 <Grid item xs={12}>
@@ -66,25 +48,27 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                         label="Number of guests"
                         type="number"
                         placeholder="1"
-                        inputProps={{ min: 1, max: 10 }}
+                        inputProps={{
+                            min: 1,
+                            max: 10,
+                        }}
                         id="guests"
-                        {...formik.getFieldProps('guests')}
-                        error={formik.touched.guests && Boolean(formik.errors.guests)}
-                        helperText={formik.touched.guests && formik.errors.guests}
+                        value={guests}
+                        onChange={onGuestsChange}
                     />
                 </Grid>
                 <Grid item xs={12}>
-                    <FormControl fullWidth error={formik.touched.occasion && Boolean(formik.errors.occasion)}>
+                    <FormControl fullWidth>
                         <InputLabel htmlFor="occasion">Occasion</InputLabel>
                         <Select
                             label="Occasion"
                             id="occasion"
-                            {...formik.getFieldProps('occasion')}
+                            value={occasion}
+                            onChange={onOccasionChange}
                         >
                             <MenuItem value="Birthday">Birthday</MenuItem>
                             <MenuItem value="Anniversary">Anniversary</MenuItem>
                         </Select>
-                        {formik.touched.occasion && <div>{formik.errors.occasion}</div>}
                     </FormControl>
                 </Grid>
                 <Grid item xs={12}>

@@ -26,27 +26,6 @@ export default function Reservation(props) {
         phoneNumber: '',
     });
 
-    const [time, setTime] = useState('');
-    const [date, setDate] = useState('');
-    const [guests, setGuests] = useState(1);
-    const [occasion, setOccasion] = useState('');
-
-    const handleTimeChange = (event) => {
-        setTime(event.target.value);
-    };
-
-    const handleDateChange = (event) => {
-        setDate(event.target.value);
-    };
-
-    const handleGuestsChange = (event) => {
-        setGuests(event.target.value);
-    };
-
-    const handleOccasionChange = (event) => {
-        setOccasion(event.target.value);
-    };
-
     // Define availableTimes here
     const availableTimes = [
         '16:00',
@@ -59,12 +38,13 @@ export default function Reservation(props) {
     ];
 
     // Function to handle submission of ReservationForm
-    const handleReservationSubmit = () => {
+    const handleReservationSubmit = (values) => {
+        console.log(values);
         const updatedReservationData = {
-            date: date,
-            time: time,
-            guests: guests,
-            occasion: occasion,
+            date: values.date,
+            time: values.time,
+            guests: values.guests,
+            occasion: values.occasion,
         };
         setReservationData(updatedReservationData);
 
@@ -146,14 +126,7 @@ export default function Reservation(props) {
                         onSubmit={handleReservationSubmit}
                         initialData={reservationData} // Pass the initialData prop
                         availableTimes={availableTimes}
-                        onTimeChange={handleTimeChange}
-                        time={time}
-                        onDateChange={handleDateChange}
-                        date={date}
-                        onGuestsChange={handleGuestsChange}
-                        guests={guests}
-                        onOccasionChange={handleOccasionChange}
-                        occasion={occasion}
+                        reservationData={reservationData}
                     />
                 </>
             )}
