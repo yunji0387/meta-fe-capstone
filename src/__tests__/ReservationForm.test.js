@@ -3,24 +3,24 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import ReservationForm from '../components/ReservationForm';
 
 describe('ReservationForm', () => {
-    const availableTimes = [
-        '16:00',
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00',
-    ];
+    // const availableTimes = [
+    //     '16:00',
+    //     '17:00',
+    //     '18:00',
+    //     '19:00',
+    //     '20:00',
+    //     '21:00',
+    //     '22:00',
+    // ];
 
     const onSubmitMock = jest.fn();
 
-    const initialData = {
-        date: '2023-10-05',
-        time: '16:00',
-        guests: 1,
-        occasion: '',
-    };
+    // const initialData = {
+    //     date: '2023-10-05',
+    //     time: '16:00',
+    //     guests: 1,
+    //     occasion: '',
+    // };
 
     const mockAvailableTimes = [
         '16:00',
