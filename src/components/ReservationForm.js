@@ -24,6 +24,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
             occasion: Yup.string().required('Occasion is required')
         }),
         onSubmit: (values) => {
+            console.log("Formik onSubmit called with values:", values);
             onSubmit(values);
         },
     });
@@ -41,6 +42,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                         {...formik.getFieldProps('date')}
                         error={formik.touched.date && Boolean(formik.errors.date)}
                         helperText={formik.touched.date && formik.errors.date}
+                        inputProps={{ "data-testid": "res-date" }}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -50,6 +52,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                             label="Choose time"
                             id="res-time"
                             {...formik.getFieldProps('time')}
+                            inputProps={{ "data-testid": "res-time" }}
                         >
                             {availableTimes.map((timeOption) => (
                                 <MenuItem key={timeOption} value={timeOption}>
@@ -66,7 +69,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                         label="Number of guests"
                         type="number"
                         placeholder="1"
-                        inputProps={{ min: 1, max: 10 }}
+                        inputProps={{ min: 1, max: 10, "data-testid": "guests" }}
                         id="guests"
                         {...formik.getFieldProps('guests')}
                         error={formik.touched.guests && Boolean(formik.errors.guests)}
@@ -80,6 +83,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                             label="Occasion"
                             id="occasion"
                             {...formik.getFieldProps('occasion')}
+                            inputProps={{ "data-testid": "occasion" }}
                         >
                             <MenuItem value="Birthday">Birthday</MenuItem>
                             <MenuItem value="Anniversary">Anniversary</MenuItem>
@@ -89,10 +93,12 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                 </Grid>
                 <Grid item xs={12}>
                     <Button
+                        id="submitReservationButton"
                         fullWidth
                         variant="contained"
                         color="primary"
                         type="submit"
+                        data-testid="submitReservationButton"
                     >
                         Next
                     </Button>
