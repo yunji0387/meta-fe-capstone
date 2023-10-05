@@ -11,8 +11,8 @@ function FeaturedCategory(props) {
 
     return (
         <Grid item xs={12} md={4}>
-            <Card sx={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: theme.palette.primary.main, borderRadius: 10 }}>
-                <CardActionArea component="a" href={category.href} >
+            <Card data-testid="featured-category-card" sx={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: theme.palette.primary.main, borderRadius: 10 }}>
+                <CardActionArea data-testid="featured-category-card-action-area" component="a" href={category.href} >
                     <CardContent>
                         <Box sx={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             {React.createElement(category.icon, { fontSize: 'large' })}

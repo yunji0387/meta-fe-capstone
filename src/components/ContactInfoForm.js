@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
@@ -9,17 +11,27 @@ import Button from '@mui/material/Button';
 export default function ContactInfoForm({
     onSubmit,
     onBackClick,
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    onFirstNameChange,
-    onLastNameChange,
-    onEmailChange,
-    onPhoneNumberChange,
     reservationData,
+    contactInfoData,
     theme
 }) {
+    const formik = useFormik({
+        initialValues: {
+            firstName: contactInfoData.firstName,
+            lastName: contactInfoData.lastName,
+            email: contactInfoData.email,
+            phoneNumber: contactInfoData.phoneNumber
+        },
+        validationSchema: Yup.object({
+            firstName: Yup.string().required('First Name is required'),
+            lastName: Yup.string().required('Last Name is required'),
+            email: Yup.string().email('Invalid email format').required('Email is required'),
+            phoneNumber: Yup.string().required('Phone Number is required')
+        }),
+        onSubmit: (values) => {
+            onSubmit(values);
+        },
+    });
 
     return (
         <Box>
@@ -54,7 +66,7 @@ export default function ContactInfoForm({
                     Occasion: {reservationData.occasion}<br />
                 </Typography>
             </Paper>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={formik.handleSubmit}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <TextField
@@ -62,8 +74,9 @@ export default function ContactInfoForm({
                             label="First Name"
                             type="text"
                             id="first-name"
-                            value={firstName}
-                            onChange={onFirstNameChange}
+                            {...formik.getFieldProps('firstName')}
+                            error={formik.touched.firstName && Boolean(formik.errors.firstName)}
+                            helperText={formik.touched.firstName && formik.errors.firstName}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -72,8 +85,9 @@ export default function ContactInfoForm({
                             label="Last Name"
                             type="text"
                             id="last-name"
-                            value={lastName}
-                            onChange={onLastNameChange}
+                            {...formik.getFieldProps('lastName')}
+                            error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+                            helperText={formik.touched.lastName && formik.errors.lastName}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -82,8 +96,9 @@ export default function ContactInfoForm({
                             label="Email"
                             type="email"
                             id="email"
-                            value={email}
-                            onChange={onEmailChange}
+                            {...formik.getFieldProps('email')}
+                            error={formik.touched.email && Boolean(formik.errors.email)}
+                            helperText={formik.touched.email && formik.errors.email}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -92,8 +107,9 @@ export default function ContactInfoForm({
                             label="Phone Number"
                             type="tel"
                             id="phone-number"
-                            value={phoneNumber}
-                            onChange={onPhoneNumberChange}
+                            {...formik.getFieldProps('phoneNumber')}
+                            error={formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)}
+                            helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
                         />
                     </Grid>
                     <Grid item xs={12}>

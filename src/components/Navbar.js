@@ -64,7 +64,7 @@ export default function Navbar(props) {
             aria-label="show 17 new notifications"
           >
             <Badge badgeContent={17} color="error">
-              <NotificationsIcon />
+              <NotificationsIcon data-testid="icon-NotificationsIcon" />
             </Badge>
           </IconButton>
           <Typography variant='p' sx={{ width: 125 }}>Notifications</Typography>
@@ -78,7 +78,7 @@ export default function Navbar(props) {
             aria-controls="primary-search-account-menu"
             aria-haspopup="true"
           >
-            <AccountCircle />
+            <AccountCircle data-testid="icon-AccountCircle" />
           </IconButton>
           <Typography variant='p' sx={{ width: 125 }}>Profile</Typography>
         </Button>
@@ -86,7 +86,7 @@ export default function Navbar(props) {
       <MenuItem sx={{ p: 0 }}>
         <Button href='./settings'>
           <IconButton size="large">
-            <SettingsIcon />
+            <SettingsIcon data-testid="icon-SettingsIcon" />
           </IconButton>
           <Typography variant='p' sx={{ width: 125 }}>Settings</Typography>
         </Button>

@@ -79,7 +79,7 @@ export default function Sidebar({ open, toggleSidebar, theme }) {
             <Divider />
             <ListItem key={index} disablePadding>
               <ListItemButton component={Link} to={section.href}>
-                <ListItemIcon sx={{ color: theme.palette.primary.main }}>
+                <ListItemIcon data-testid={`icon-${section.title}`} sx={{ color: theme.palette.primary.main }}>
                   {React.createElement(section.icon)}
                 </ListItemIcon>
                 <ListItemText
