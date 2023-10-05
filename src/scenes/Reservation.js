@@ -39,7 +39,7 @@ export default function Reservation(props) {
 
     // Function to handle submission of ReservationForm
     const handleReservationSubmit = (values) => {
-        console.log(values);
+        // console.log(values);
         const updatedReservationData = {
             date: values.date,
             time: values.time,
@@ -51,29 +51,6 @@ export default function Reservation(props) {
         // Hide ReservationForm and show ContactInfoForm
         setShowReservationForm(false);
         setShowContactInfoForm(true);
-    };
-
-    // Define state variables for contact information
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-
-    // Event handlers to update state when input values change
-    const handleFirstNameChange = (event) => {
-        setFirstName(event.target.value);
-    };
-
-    const handleLastNameChange = (event) => {
-        setLastName(event.target.value);
-    };
-
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
-
-    const handlePhoneNumberChange = (event) => {
-        setPhoneNumber(event.target.value);
     };
 
     // Define state variable to track changes in contactInfoData
@@ -91,12 +68,13 @@ export default function Reservation(props) {
     }, [contactInfoData, reservationData.date, reservationData.time, reservationData.guests, reservationData.occasion, contactInfoUpdated]);
 
     // Function to handle submission of ContactInfoForm
-    const handleContactInfoSubmit = () => {
+    const handleContactInfoSubmit = (values) => {
+        console.log(values);
         const updatedContactData = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            phoneNumber: phoneNumber,
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            phoneNumber: values.phoneNumber,
         };
         setContactInfoData(updatedContactData);
         setContactInfoUpdated(true); // Mark contactInfoData as updated
@@ -142,15 +120,8 @@ export default function Reservation(props) {
                     <ContactInfoForm
                         onSubmit={handleContactInfoSubmit}
                         onBackClick={handleBackToReservation}
-                        firstName={firstName}
-                        lastName={lastName}
-                        email={email}
-                        phoneNumber={phoneNumber}
-                        onFirstNameChange={handleFirstNameChange}
-                        onLastNameChange={handleLastNameChange}
-                        onEmailChange={handleEmailChange}
-                        onPhoneNumberChange={handlePhoneNumberChange}
                         reservationData={reservationData}
+                        contactInfoData={contactInfoData}
                         theme={theme}
                     />
                 </>
