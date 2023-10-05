@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
@@ -60,7 +61,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                                 </MenuItem>
                             ))}
                         </Select>
-                        {formik.touched.time && <div>{formik.errors.time}</div>}
+                        <FormHelperText>{formik.touched.time && formik.errors.time}</FormHelperText>
                     </FormControl>
                 </Grid>
                 <Grid item xs={12}>
@@ -88,7 +89,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                             <MenuItem value="Birthday">Birthday</MenuItem>
                             <MenuItem value="Anniversary">Anniversary</MenuItem>
                         </Select>
-                        {formik.touched.occasion && <div>{formik.errors.occasion}</div>}
+                        <FormHelperText>{formik.touched.occasion && formik.errors.occasion}</FormHelperText>
                     </FormControl>
                 </Grid>
                 <Grid item xs={12}>
