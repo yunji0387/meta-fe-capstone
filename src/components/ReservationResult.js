@@ -48,7 +48,7 @@ export default function ReservationResult(props) {
                     </Button>
                 </>
             )}
-            <Button fullWidth href='/' variant="contained" color="primary" sx={{ mt: 5 }}>Back to Home</Button>
+            <Button aria-label="On Click" fullWidth href='/' variant="contained" color="primary" sx={{ mt: 5 }}>Back to Home</Button>
         </Container>
     );
 }

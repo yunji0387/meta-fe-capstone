@@ -105,7 +105,7 @@ describe('ReservationForm', () => {
         fireEvent.change(occasionSelect, { target: { value: 'Birthday' } });
 
         // Click the submit button
-        const submitButton = screen.getByTestId('submitReservationButton');
+        const submitButton = screen.getByTestId('proceedToNextStepButton');
         fireEvent.click(submitButton);
 
         console.log("----------------");
