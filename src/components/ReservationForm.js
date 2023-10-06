@@ -25,7 +25,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
             occasion: Yup.string().required('Occasion is required')
         }),
         onSubmit: (values) => {
-            console.log("Formik onSubmit called with values:", values);
+            // console.log("Formik onSubmit called with values:", values);
             onSubmit(values);
         },
     });
@@ -94,12 +94,13 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
                 </Grid>
                 <Grid item xs={12}>
                     <Button
-                        id="submitReservationButton"
+                        id="proceedToNextStepButton"
                         fullWidth
                         variant="contained"
                         color="primary"
                         type="submit"
-                        data-testid="submitReservationButton"
+                        data-testid="proceedToNextStepButton"
+                        aria-label="Proceed to next step"
                     >
                         Next
                     </Button>

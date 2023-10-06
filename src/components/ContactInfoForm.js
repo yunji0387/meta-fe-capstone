@@ -40,6 +40,8 @@ export default function ContactInfoForm({
                     fullWidth
                     variant="outlined" // You can style the button as needed
                     onClick={onBackClick}
+                    id="backToReservationFormButton"
+                    aria-label="Go back to table reservation"
                     sx={{
                         mb: 2,
                         border: 0,
@@ -118,6 +120,8 @@ export default function ContactInfoForm({
                             variant="contained"
                             color="primary"
                             type="submit"
+                            id="submitReservationButton"
+                            aria-label="Submit table reservation"
                         >
                             Make Your Reservation
                         </Button>
