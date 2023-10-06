@@ -25,7 +25,7 @@ export default function ReservationForm({ availableTimes, onSubmit, reservationD
             occasion: Yup.string().required('Occasion is required')
         }),
         onSubmit: (values) => {
-            console.log("Formik onSubmit called with values:", values);
+            // console.log("Formik onSubmit called with values:", values);
             onSubmit(values);
         },
     });
