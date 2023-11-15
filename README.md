@@ -20,4 +20,3 @@ One of the key features of our website is the ability for customers to easily su
 - [React](https://react.dev/)
 - [MUI Library](https://mui.com/)
 - [Formik](https://formik.org/docs/examples/with-material-ui)
-- [Git/GitHub](https://git-scm.com/)
