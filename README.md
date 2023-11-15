@@ -2,13 +2,13 @@
 Welcome to the Little Lemon Restaurant website repository. This front-end website is primarily built using the React MUI (Material-UI) library, creating a modern and visually appealing online presence for our restaurant.
 
 ## Features
-### **Home Page**
+#### **Home Page**
 Displays upcoming events and menu items using MUI's grid layout for an organized and visually appealing presentation.
-### Mobile Responsive Design**
+#### Mobile Responsive Design**
 Ensures the website is fully functional and visually consistent across various devices, from desktops to mobile phones.
-### **Table Reservation Form**
+#### **Table Reservation Form**
 Features a user-friendly form with client-side validation using Formik, streamlining the reservation process with accurate input handling.
-### **Menu Page**
+#### **Menu Page**
 Showcases a variety of menus, neatly organized and presented using a grid layout, with information sourced from markdown files for clarity.
 
 ## Technology Stack
