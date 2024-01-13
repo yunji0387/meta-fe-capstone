@@ -48,7 +48,7 @@ function App() {
           <main>
             <Box sx={{ pt: 8 }}>
               <Routes>
-                <Route path="/" element={<Home theme={theme} />} />
+                <Route exact path="/" element={<Home theme={theme} />} />
                 <Route path="/delivery" element={<Delivery theme={theme} />} />
                 <Route path="/pickup" element={<PickUp theme={theme} />} />
                 <Route path="/menu" element={<Menu theme={theme} />} />
