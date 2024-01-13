@@ -41,22 +41,22 @@ const theme = createTheme({
 function App() {
   return (
     <div className="App">
-      <HashRouter basename="/">
+      <HashRouter basename='/'>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Navbar theme={theme} />
           <main>
             <Box sx={{ pt: 8 }}>
               <Routes>
-                <Route exact path="/" element={<Home theme={theme} />} />
-                <Route path="/delivery" element={<Delivery theme={theme} />} />
-                <Route path="/pickup" element={<PickUp theme={theme} />} />
-                <Route path="/menu" element={<Menu theme={theme} />} />
-                <Route path="/reservation" element={<Reservation theme={theme} />} />
-                <Route path="/about" element={<About theme={theme} />} />
-                <Route path="/notifications" element={<Notifications theme={theme} />} />
-                <Route path="/profile" element={<Profile theme={theme} />} />
-                <Route path="/settings" element={<Settings theme={theme} />} />
+                <Route exact path='/' element={<Home theme={theme} />} />
+                <Route path='/delivery' element={<Delivery theme={theme} />} />
+                <Route path='/pickup' element={<PickUp theme={theme} />} />
+                <Route path='/menu' element={<Menu theme={theme} />} />
+                <Route path='/reservation' element={<Reservation theme={theme} />} />
+                <Route path='/about' element={<About theme={theme} />} />
+                <Route path='/notifications' element={<Notifications theme={theme} />} />
+                <Route path='/profile' element={<Profile theme={theme} />} />
+                <Route path='/settings' element={<Settings theme={theme} />} />
               </Routes>
             </Box>
           </main>
