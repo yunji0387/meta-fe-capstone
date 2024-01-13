@@ -40,7 +40,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <div className="App">
+    // <div className="App">
       <HashRouter basename='/'>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -85,7 +85,7 @@ function App() {
           <Footer />
         </ThemeProvider>
       </BrowserRouter> */}
-    </div>
+    // </div>
   );
 }
 
