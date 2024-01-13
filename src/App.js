@@ -1,6 +1,6 @@
 import React from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { HashRouter, Routes, Route } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -38,61 +38,61 @@ const theme = createTheme({
   },
 });
 
-// function App() {
-//   return (
-//     {/* <div className="App">
-//       <BrowserRouter>
-//         <ThemeProvider theme={theme}>
-//           <CssBaseline />
-//           <Navbar theme={theme} />
-//           <main>
-//             <Box sx={{ pt: 8 }}>
-//               <Routes>
-//                 <Route path="/" element={<Home theme={theme} />} />
-//                 <Route path="/delivery" element={<Delivery theme={theme} />} />
-//                 <Route path="/pickup" element={<PickUp theme={theme} />} />
-//                 <Route path="/menu" element={<Menu theme={theme} />} />
-//                 <Route path="/reservation" element={<Reservation theme={theme} />} />
-//                 <Route path="/about" element={<About theme={theme} />} />
-//                 <Route path="/notifications" element={<Notifications theme={theme} />} />
-//                 <Route path="/profile" element={<Profile theme={theme} />} />
-//                 <Route path="/settings" element={<Settings theme={theme} />} />
-//               </Routes>
-//             </Box>
-//           </main>
-//           <Footer />
-//         </ThemeProvider>
-//       </BrowserRouter>
-//     </div> */}
-//   );
-// }
-
 function App() {
   return (
-    <HashRouter basename='/'>
+    <div className="App">
+      <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Navbar theme={theme} />
           <main>
             <Box sx={{ pt: 8 }}>
               <Routes>
-                <Route exact path='/' element={<Home theme={theme} />} />
-                <Route path='/delivery' element={<Delivery theme={theme} />} />
-                <Route path='/pickup' element={<PickUp theme={theme} />} />
-                <Route path='/menu' element={<Menu theme={theme} />} />
-                <Route path='/reservation' element={<Reservation theme={theme} />} />
-                <Route path='/about' element={<About theme={theme} />} />
-                <Route path='/notifications' element={<Notifications theme={theme} />} />
-                <Route path='/profile' element={<Profile theme={theme} />} />
-                <Route path='/settings' element={<Settings theme={theme} />} />
+                <Route path="/" element={<Home theme={theme} />} />
+                <Route path="/delivery" element={<Delivery theme={theme} />} />
+                <Route path="/pickup" element={<PickUp theme={theme} />} />
+                <Route path="/menu" element={<Menu theme={theme} />} />
+                <Route path="/reservation" element={<Reservation theme={theme} />} />
+                <Route path="/about" element={<About theme={theme} />} />
+                <Route path="/notifications" element={<Notifications theme={theme} />} />
+                <Route path="/profile" element={<Profile theme={theme} />} />
+                <Route path="/settings" element={<Settings theme={theme} />} />
               </Routes>
             </Box>
           </main>
           <Footer />
         </ThemeProvider>
-      </HashRouter>
+      </BrowserRouter>
+    </div>
   );
 }
+
+// function App() {
+//   return (
+//     <HashRouter basename='/'>
+//         <ThemeProvider theme={theme}>
+//           <CssBaseline />
+//           <Navbar theme={theme} />
+//           <main>
+//             <Box sx={{ pt: 8 }}>
+//               <Routes>
+//                 <Route exact path='/' element={<Home theme={theme} />} />
+//                 <Route path='/delivery' element={<Delivery theme={theme} />} />
+//                 <Route path='/pickup' element={<PickUp theme={theme} />} />
+//                 <Route path='/menu' element={<Menu theme={theme} />} />
+//                 <Route path='/reservation' element={<Reservation theme={theme} />} />
+//                 <Route path='/about' element={<About theme={theme} />} />
+//                 <Route path='/notifications' element={<Notifications theme={theme} />} />
+//                 <Route path='/profile' element={<Profile theme={theme} />} />
+//                 <Route path='/settings' element={<Settings theme={theme} />} />
+//               </Routes>
+//             </Box>
+//           </main>
+//           <Footer />
+//         </ThemeProvider>
+//       </HashRouter>
+//   );
+// }
 
 
 export default App;
